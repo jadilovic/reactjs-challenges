@@ -14,6 +14,7 @@ const GetAPI = () => {
 	useEffect(() => {
 		getData();
 	}, []);
+
 	return (
 		<div>
 			<ul>

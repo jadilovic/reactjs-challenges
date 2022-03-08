@@ -10,6 +10,7 @@ import Counter from './Counter';
 import NumContext from './NumContext';
 import Tasks from './Tasks';
 import GetAPI from './GetAPI';
+import GetData from './GetData';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -29,7 +30,8 @@ function App() {
 				<Testing />
 				<Counter />
 				<Tasks />
-				<GetAPI />
+				{/* <GetAPI /> */}
+				<GetData />
 			</div>
 		</NumContext.Provider>
 	);
