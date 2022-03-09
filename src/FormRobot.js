@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import UseCallback from './UseCallback';
 import Robots from './Robots';
 
 const FormRobot = () => {
@@ -33,6 +34,7 @@ const FormRobot = () => {
 					width="150"
 				/>
 			)}
+			<UseCallback />
 		</div>
 	);
 };

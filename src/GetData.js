@@ -23,7 +23,44 @@ const GetData = () => {
 
 	console.log(locations);
 
-	return <div>GetData</div>;
+	return (
+		<>
+			<table>
+				<thead>
+					<tr>
+						<th>City</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+						<th>Country</th>
+						<th>Post code</th>
+						<th>State</th>
+						<th>St Name</th>
+						<th>St Number</th>
+						<th>Timezone</th>
+						<th>Offset</th>
+					</tr>
+				</thead>
+				<tbody>
+					{locations.map((local, index) => {
+						return (
+							<tr key={index}>
+								<td>{local.city}</td>
+								<td>{local.coordinates.latitude}</td>
+								<td>{local.coordinates.longitude}</td>
+								<td>{local.country}</td>
+								<td>{local.postcode}</td>
+								<td>{local.state}</td>
+								<td>{local.street.name}</td>
+								<td>{local.street.number}</td>
+								<td>{local.timezone.description}</td>
+								<td>{local.timezone.offset}</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
+		</>
+	);
 };
 
 export default GetData;
