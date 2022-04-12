@@ -7,6 +7,9 @@ const Home = () => {
 		<>
 			<div>Home</div>
 			<Link to={'/robot1'}>Go to robots</Link>
+			<br />
+			<Link to={'/test2'}>Go to Test 2</Link>
+			<br />
 			<GetData />
 		</>
 	);
