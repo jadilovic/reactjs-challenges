@@ -14,6 +14,7 @@ import GetData from './GetData';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Testing2 from './Testing2';
+import Registration from './Registration';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/robot1" element={<FormRobot />} />
 				<Route path="/test2" element={<Testing2 />} />
+				<Route path="/registration" element={<Registration />} />
 
 				{/* <FormTest />
 					<Vowels />

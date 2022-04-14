@@ -10,6 +10,8 @@ const Home = () => {
 			<br />
 			<Link to={'/test2'}>Go to Test 2</Link>
 			<br />
+			<Link to={'/registration'}>Go to Registration</Link>
+			<br />
 			<GetData />
 		</>
 	);

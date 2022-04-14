@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 const Testing2 = () => {
 	function x() {
 		var b = 10;
@@ -242,7 +242,77 @@ const Testing2 = () => {
 	// 	checkNumber(index);
 	// }
 
-	return <div>Testing2</div>;
+	const [value, setValue] = useState('');
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const charNum = {};
+		const valueArr = value.split('');
+		// valueArr.forEach((char) => {
+		// 	if (charNum[char]) {
+		// 		charNum[char]++;
+		// 	} else {
+		// 		charNum[char] = 1;
+		// 	}
+		// });
+		const obj = valueArr.reduce((acc, curr) => {
+			acc[curr] ? acc[curr]++ : (acc[curr] = 1);
+			return acc;
+		}, {});
+		console.log(obj);
+	};
+
+	const numsArr = [9, 7, 1, 2, 3, 4, 4, 5, 6, 2, 3, 4, 7, 9, 4, 9];
+	const unique = [];
+	for (let index = 0; index < numsArr.length; index++) {
+		if (unique.indexOf(numsArr[index]) === -1) {
+			unique.push(numsArr[index]);
+		}
+	}
+
+	const uniqueSet = [...new Set(numsArr)];
+
+	console.log(unique);
+	console.log(uniqueSet);
+	console.log(Math.max(...numsArr));
+
+	const maxi = numsArr.reduce((acc, curr) => {
+		if (acc < curr) {
+			acc = curr;
+		}
+		return acc;
+	}, 0);
+
+	console.log(maxi);
+
+	const uniqueArr = [...new Set(numsArr)];
+	const indexMax = uniqueArr.indexOf(maxi);
+	uniqueArr.splice(indexMax, 1);
+	const secondMax = Math.max(...uniqueArr);
+	console.log(secondMax);
+
+	const minNum = numsArr.reduce((acc, curr) => {
+		if (acc > curr) {
+			acc = curr;
+		}
+		return acc;
+	}, numsArr[0]);
+
+	console.log(minNum);
+
+	console.log(numsArr.reverse());
+
+	return (
+		<>
+			<div>Testing2</div>
+			<input
+				type="text"
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
+			/>
+			<button onClick={handleSubmit}>Check Characters</button>
+		</>
+	);
 };
 
 export default Testing2;
